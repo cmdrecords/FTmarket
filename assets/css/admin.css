@@ -2,3 +2,19 @@
   padding: 0;
   margin: 0;
 }
+
+.adminpanel-inner {
+  width: 100%;
+  height: 100dvh;
+  background: linear-gradient(90deg, dimgray, rgb(187, 186, 186));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminpanel-wrapper {
+  border-radius: 20px;
+  background-color: #191919;
+  width: 80%;
+  height: 80%;
+}
