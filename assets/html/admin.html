@@ -14,12 +14,29 @@
             <div class="statistics-container">
               <div class="interaction-menu">
                 <h1>Statistics</h1>
-                <div class="srch-menu-container"><input type="search" placeholder="Search something..." class="srch-menu"></div>
-                <input type="button" value="Log In" class="login-btn-menu">
-                <div class="notifications-menu"><img class="image-notification" src="../images/notification-img.png"></div>
+                <div class="srch-menu-container">
+                  <input
+                    type="search"
+                    placeholder="Search something..."
+                    class="srch-menu"
+                  />
+                </div>
+                <a href="../../index.html"
+                  ><button type="button" class="login-btn-menu">
+                    Log In
+                  </button></a
+                >
+                <div class="notifications-menu">
+                  <img
+                    class="image-notification"
+                    src="../images/notification-img.png"
+                  />
+                </div>
               </div>
               <div class="service-part">
-                <div class="service-items1 item"></div>
+                <div class="service-items1 item">
+                  <canvas id="myChart"></canvas>
+                </div>
                 <div class="service-items2 item"></div>
                 <div class="service-items3 item"></div>
                 <div class="service-items4 item"></div>
@@ -31,5 +48,34 @@
         </div>
       </section>
     </main>
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      let countVisit = Number(localStorage.getItem("count"));
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [countVisit],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
